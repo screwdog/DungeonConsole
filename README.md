@@ -11,7 +11,7 @@ This has been developed solely for my personal use and for personal development.
 
 ## How to use
 
-1. make sure you have a functioning [Julia](julialang.org) installation. I'm using v1.8.3, no idea what other version(s) this will work with.
+1. make sure you have a functioning [Julia](https://julialang.org) installation. I'm using v1.8.3, no idea what other version(s) this will work with.
 
 2. obtain this package (or just the source). It's not in any registry so probably best to simply download the files in the "src" directory.
 
