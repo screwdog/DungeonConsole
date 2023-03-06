@@ -100,7 +100,7 @@ const shopping = r"<br>🎒<br>" => Shopping
 # this is hard to detect. Hopefully this is sufficient.
 const intown = r"---<br>.+?(?:town|village).*?," *
     r" what would you like to do\?<\/p>" => InTown
-const newchar = r"🗺️ Campaign (\d+) #dnd" => NewChar
+const newchar = r"🗺️ Campaign (\d+) <a .+?>#<span>dnd<\/span>" => NewChar
 
 # Base.parse(::Rational{Int}, str) isn't available yet, do basic conversion here.
 # (see https://github.com/JuliaLang/julia/issues/18328)

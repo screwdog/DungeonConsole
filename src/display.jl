@@ -104,7 +104,7 @@ activitytext(a::Adventuring) = "You encounter a...\n\n" *
     "CR {#FFFFFF}$(rattext(a.cr)){/#FFFFFF}, XP {gold1}$(a.xp){/gold1}"
 activitytext(s::Shopping) = "You are in a shop. What would you like to buy?"
 activitytext(i::InTown) = "You are safe in a town. What would you like to do?"
-activitytext(n::NewChar) = "Campaign $(n.campaign). Whose story should this be?"
+activitytext(n::NewChar) = "Campaign $(n.campaign).\n\nWhose story should this be?"
 
 # construct the activity panel
 activitypanel(a::AbstractActivity) = TextBox(
@@ -210,7 +210,7 @@ function prompt(actions, default)
         "{#44b9eb}p{/#44b9eb}oll",          # poll
         "or {#44b9eb}q{/#44b9eb}uit: "      # or quit
     ]
-    if !voted(actions)
+    if !isvoted(actions)
         opts[1] = "or r" * opts[1]
         prepend!(opts, [
             "Vote {underline}1{/underline}", # <--- TODO underline the actual default
