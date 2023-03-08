@@ -100,7 +100,7 @@ const adventuring =
     r"❤️ (\d+)-(\d+)" *         # min - max hp
     r" (.+?)?" *                # optional defence style
     r" ❕(\d+(?:\/\d+)?)" *      # cr (possible fraction)
-    r" ✨ (\d+)<\/p>" =>        # xp
+    r" ✨ (\d+)<" =>            # xp
     Adventuring
 
 const shopping = r"<br>🎒<br>" => Shopping
