@@ -54,7 +54,7 @@ charactersheet(b::BasicCharacter) = TextBox(
     $(b.description)
 
     Level {gold1}$(b.level[1]){/gold1} ($(b.level[2]) experience)
-    $(healthtext(b.hp)) hit points, $(b.hitdice[1])/$(b.hitdice[2]) hit dice
+    $(healthtext(b.hp)) HP, $(b.hitdice[1])/$(b.hitdice[2]) hit dice
 
     $(b.weapon)
     $(b.armour)
