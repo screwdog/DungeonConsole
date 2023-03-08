@@ -61,12 +61,9 @@ charactersheet(b::BasicCharacter) = TextBox(
     $(ismagic(b) ? "Spells:" : "") $(ismagic(b) ? spell_list(b.spells) : "")
     {gold1}$(b.gold){/gold1} gold
 
-    Strength:     $(attribute(b.attributes[1]))
-    Dexterity:    $(attribute(b.attributes[2]))
-    Constitution: $(attribute(b.attributes[3]))
-    Intelligence: $(attribute(b.attributes[4]))
-    Wisdom:       $(attribute(b.attributes[5]))
-    Charisma:     $(attribute(b.attributes[6]))
+    STR $(attribute(b.attributes[1]))       INT $(attribute(b.attributes[4]))
+    DEX $(attribute(b.attributes[2]))       WIS $(attribute(b.attributes[5]))
+    CON $(attribute(b.attributes[3]))       CHA $(attribute(b.attributes[6]))
 
     {underline}Campaign $(b.campaign){/underline}
     Started $(campaignstart(b.birthdate))

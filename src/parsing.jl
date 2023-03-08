@@ -38,7 +38,14 @@ function parsehitdice(body)
     m === nothing && return (0,0)
     return Tuple(parse.(Int, m))
 end
-parseweapon(body) = match(r"(?:⚔️|🗡️) (\w.+?)\s*<", body) |> capture
+function parseweapon(body)
+    m = match(
+            r">.+? ((?:\w|\s|,)+?\[.+?\]) " *       # first weapon
+            r"(?:.+? ((?:\w|\s|,)+?\[.+?\]) )?<",   # optional 2nd weapon
+        body)
+    m === nothing && return "No weapon"
+    return join(filter(!isnothing, collect(m)), "\n")
+end
 parsearmour(body) = match(r"<br>🛡️ (.+?\[\d+\])\s*<", body) |> capture
 
 const SPELL_REGEX = r">(?:(\d)..(\d+)\/(\d+))+\s*?<"
