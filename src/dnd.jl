@@ -88,5 +88,8 @@ const MONSTER_TYPE = Dict(
     "🧟"        => "monstrosity",
     "👹"        => "demon",
     "🐉"        => "dragon",
-    "🌱"        => "plant"
+    "🌱"        => "plant",
+    "default"   => "unknown"
 )
+
+monster_type(str) = MONSTER_TYPE[getkey(MONSTER_TYPE, str, "default")]

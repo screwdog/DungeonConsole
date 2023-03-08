@@ -83,7 +83,7 @@ struct Fighting <: AbstractActivity
     xp::Int
 end
 Fighting(type, name, hpcur, hpmax, ac, defence, cr, xp) =
-    Fighting(MONSTER_TYPE[type], name, parse.(Int, (hpcur, hpmax)), parse(Int, ac),
+    Fighting(monster_type(type), name, parse.(Int, (hpcur, hpmax)), parse(Int, ac),
         Defence(defence), parserat(cr), parse(Int, xp))
 Fighting(type, name, hpcur::AbstractString, hpmax::AbstractString, ac, cr, xp) =
     Fighting(type, name, hpcur, hpmax, ac, " ", cr, xp)
@@ -103,7 +103,7 @@ struct Adventuring <: AbstractActivity
     xp::Int
 end
 Adventuring(type, name, hpmin, hpmax, defence, cr, xp) =
-    Adventuring(MONSTER_TYPE[type], name, parse.(Int, (hpmin, hpmax)), Defence(defence),
+    Adventuring(monster_type(type), name, parse.(Int, (hpmin, hpmax)), Defence(defence),
         parserat(cr), parse(Int, xp))
 Adventuring(type, name, hpmin::AbstractString, hpmax::AbstractString, cr, xp) =
     Adventuring(type, name, hpmin, hpmax, " ", cr, xp)
