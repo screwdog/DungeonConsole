@@ -90,7 +90,7 @@ const fighting = r"---<br>" *               # after divider
     r"(?:❤️|🖤){1,10} (\d+)\/(\d+)<br>" *  # current hp / max hp
     r".+?(\d+) (.+?)?<br>" *                # ac, optional defence style
     r"❕(\d+(?:\/\d+)?)<br>" *               # cr (possible fraction)
-    r"✨ (\d+)<\/p>" =>                    # xp
+    r"✨ (\d+)<" =>                         # xp
     Fighting
 
 # adventuring activity, extract: type, name, hpmin, hpmax, defence, cr, xp
