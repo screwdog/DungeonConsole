@@ -26,8 +26,12 @@ charactersheet(s::SimpleCharacter) = TextBox(
 # variety of methods to create the various parts of a more complex character sheet
 function healthtext(currhp, maxhp)
     currhp ≤ 0 && return "{bold #454545}$currhp{/bold #454545}/{green}$maxhp{/green}"
-    gradient = range(HSL(colorant"red"), stop=HSL(colorant"green"), length=maxhp)
-    hpcolor = hex(gradient[currhp])
+    if maxhp > 1 # can't have a gradient with different endpoints but length 1
+        gradient = range(HSL(colorant"red"), stop=HSL(colorant"green"), length=maxhp)
+        hpcolor = hex(gradient[currhp])
+    else
+        hpcolor = hex(colorant"green")
+    end
     return "{#$hpcolor}$currhp{/#$hpcolor}/{green}$maxhp{/green}"
 end
 healthtext(itr) = healthtext(itr...)
