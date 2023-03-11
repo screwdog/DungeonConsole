@@ -41,7 +41,7 @@ end
 function parseweapon(body)
     m = match(
             r">.+? ((?:\w|\s|,)+?\[.+?\]) " *       # first weapon
-            r"(?:.+? ((?:\w|\s|,)+?\[.+?\]) )?<",   # optional 2nd weapon
+            r"(?:.+? ((?:\w|\s|,)+?\[.+?\]) )?",   # optional 2nd weapon
         body)
     m === nothing && return "No weapon"
     return join(filter(!isnothing, collect(m)), "\n")
