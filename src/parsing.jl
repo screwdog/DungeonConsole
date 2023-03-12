@@ -86,7 +86,7 @@ Activities parsing
 
 # fighting activity, extract: type, name, hpcur, hpmax, ac, defence, cr, xp
 const fighting = r"---<br>" *               # after divider
-    r"(.+?) ((?:\w|\s)+)<br>" *             # emoji for type, then creature name
+    r"(.+?) ((?:\w|\s|,|\(|\))+)<br>" *     # emoji for type, then creature name
     r"(?:❤️|🖤){1,10} (\d+)\/(\d+)<br>" *  # current hp / max hp
     r".+?(\d+) (.+?)?<br>" *                # ac, optional defence style
     r"❕(\d+(?:\/\d+)?)<br>" *               # cr (possible fraction)
