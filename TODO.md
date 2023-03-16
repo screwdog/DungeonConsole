@@ -8,13 +8,14 @@ Project TODO List
     ✓ polls
     ✓ filter irrelevant posts
     - regular update to poll results?
+    - clear notifications for closed polls
 2. show post
     ✓ reformat for console
     ✓ extract profile data for current status
     ✓ present poll options
 3. display information as dashboard
-    - rather than by post
-    - determine current state - fighting, in town, etc - and present accordingly
+    ✓ rather than by post
+    ✓ determine current state - fighting, in town, etc - and present accordingly
     - non-scrolling
     - help displays explanation of symbols
 3. allow poll responses
