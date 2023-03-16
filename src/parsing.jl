@@ -20,7 +20,7 @@ parseint(m) = m |> capture |> n -> parse(Int, n)
 Character sheet parsing
 --------------------------------------------------------------------------------=#
 const CLASS_SYMBOLS = "[⚒️📯☀️🌿⚔️☯🛡️🏹🗡️💫🧿🔮]"
-const DESC_REGEX = Regex("<p>" * CLASS_SYMBOLS * raw".*?(\w+,(?:\w|\s)*)<")
+const DESC_REGEX = Regex("<p>" * CLASS_SYMBOLS * raw".*?(\w+,(?:\w|\s|-)*)<")
 
 parsedesc(body) = match(DESC_REGEX, body) |> capture
 function parsehp(body)
