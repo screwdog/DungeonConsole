@@ -96,7 +96,7 @@ const fighting = r"---<br>" *               # after divider
 # adventuring activity, extract: type, name, hpmin, hpmax, defence, cr, xp
 const adventuring = 
     r"---<br>(?:\w|\s|,)+" *    # ignore preamble
-    r"(.+?) ((?:\w|\s)+)<br>" * # emoji for type, then creature name
+    r"(.+?) ((?:\w|\s|\(|\))+)<br>" * # emoji for type, then creature name
     r"❤️ (\d+)-(\d+)" *         # min - max hp
     r" (.+?)?" *                # optional defence style
     r" ❕(\d+(?:\/\d+)?)" *      # cr (possible fraction)
