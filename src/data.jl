@@ -42,6 +42,7 @@ struct BasicCharacter <: AbstractCharacter
     level::Tuple{Int, Int}
     hitdice::Tuple{Int, Int}
     weapon::String
+    shield::Bool
     armour::String
     spells::Spells
     gold::Int
@@ -52,8 +53,8 @@ end
 BasicCharacter(itr) = BasicCharacter(itr...)
 # TODO move this to "parsing.jl"
 BasicCharacter(body::AbstractString) = BasicCharacter(
-    body .|> (parsedesc, parsehp, parselevel, parsehitdice, parseweapon, parsearmour,
-        parsespells, parsegold, parseattributes, parsecampaign, parsebirth)
+    body .|> (parsedesc, parsehp, parselevel, parsehitdice, parseweapon, parseshield,
+        parsearmour, parsespells, parsegold, parseattributes, parsecampaign, parsebirth)
 )
 
 # does a character have access to magic?

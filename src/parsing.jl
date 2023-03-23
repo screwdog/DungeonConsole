@@ -46,7 +46,8 @@ function parseweapon(body)
     m === nothing && return "No weapon"
     return join(filter(!isnothing, collect(m)), "\n")
 end
-parsearmour(body) = match(r"<br>🛡️ (.+?\[\d+\])\s*<", body) |> capture
+parseshield(body) = match(r"Shield", body) |> !isnothing
+parsearmour(body) = match(r"<br>🛡️\s*((?:\w|\s|-)*\[\d+\])\s*<", body) |> capture
 
 const SPELL_REGEX = r">(?:(\d)..(\d+)\/(\d+))+\s*?<"
 

@@ -61,13 +61,13 @@ charactersheet(b::BasicCharacter) = TextBox(
     $(healthtext(b.hp)) HP, $(b.hitdice[1])/$(b.hitdice[2]) hit dice
 
     $(b.weapon)
-    $(b.armour)
+    $(b.shield ? "Shield\n" : "")$(b.armour)
     $(ismagic(b) ? "Spells:" : "") $(ismagic(b) ? spell_list(b.spells) : "")
     {gold1}$(b.gold){/gold1} gold
 
-    STR $(attribute(b.attributes[1]))       INT $(attribute(b.attributes[4]))
-    DEX $(attribute(b.attributes[2]))       WIS $(attribute(b.attributes[5]))
-    CON $(attribute(b.attributes[3]))       CHA $(attribute(b.attributes[6]))
+    STR $(attribute(b.attributes[1]))     INT $(attribute(b.attributes[4]))
+    DEX $(attribute(b.attributes[2]))     WIS $(attribute(b.attributes[5]))
+    CON $(attribute(b.attributes[3]))     CHA $(attribute(b.attributes[6]))
 
     {underline}Campaign $(b.campaign){/underline}
     Started $(campaignstart(b.birthdate))
